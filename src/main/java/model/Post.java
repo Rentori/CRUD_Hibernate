@@ -24,7 +24,8 @@ public class Post {
     @Enumerated(EnumType.STRING)
     private PostStatus postStatus;
 
-    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
+            fetch = FetchType.LAZY)
     @JoinTable(
             name = "post_labels",
             joinColumns = {@JoinColumn(name = "post_id")},
@@ -32,7 +33,8 @@ public class Post {
     )
     private List<Label> labels;
 
-    @ManyToMany(mappedBy = "posts", cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToMany(mappedBy = "posts", cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
+            fetch = FetchType.LAZY)
     private List<Writer> writers;
 
     @Transient

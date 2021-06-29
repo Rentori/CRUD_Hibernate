@@ -17,7 +17,8 @@ public class Writer {
     @Column(name = "lastName")
     private String lastName;
 
-    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
+            fetch = FetchType.LAZY)
     @JoinTable(
             name = "writer_posts",
             joinColumns = {@JoinColumn(name = "writer_id")},

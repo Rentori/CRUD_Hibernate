@@ -14,7 +14,9 @@ public class Label {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(mappedBy = "labels", cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToMany(mappedBy = "labels",
+            cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
+            fetch = FetchType.LAZY)
     private List<Post> posts;
 
     public Label() {
