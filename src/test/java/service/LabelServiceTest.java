@@ -13,14 +13,14 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import repository.hibernateImpl.LabelRepositoryImpl;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @RunWith(value = MockitoJUnitRunner.class)
 public class LabelServiceTest extends TestCase {
     private final LabelService labelService = new LabelService();
     private final Label label = new Label(1L);
-    private final List<Label> labelList = Arrays.asList(label);
+    private final List<Label> labelList = Collections.singletonList(label);
 
     @Mock
     private LabelRepositoryImpl labelRepository;
