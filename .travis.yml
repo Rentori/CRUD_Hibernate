@@ -1,6 +1,4 @@
 language:
   java
-os:
-  windows
 jdk:
   -openjdk16
