@@ -24,7 +24,9 @@
 - Maven
 - Flyway
 - Hibernate
-
+- JUnit
+- Mockito
+  
 ШАБЛОНЫ ПРОЕКТИРОВАНИЯ:
 
 - Singleton
